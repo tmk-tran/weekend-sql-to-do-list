@@ -1,3 +1,3 @@
 $(() => {
-    console.log("JQ and JS");
+    console.log("JQ and JS ready!");
   });
