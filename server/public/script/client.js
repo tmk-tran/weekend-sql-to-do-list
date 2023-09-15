@@ -1,18 +1,24 @@
 $(() => {
   console.log("JQ and JS ready!");
 
-//   refreshList();
-//   onClick();
+  refreshList();
+  //   onClick();
 });
 
 // GET list data
 function refreshList() {
-    $.ajax({
-      type: "GET",
-      url: "/list",
+  console.log("in refresh");
+  $.ajax({
+    type: "GET",
+    url: "/list",
+  })
+    .then((response) => {
+      renderBooks(response);
     })
-      .then((response) => {
-        renderBooks(response);
-      })
-      .catch((err) => console.log(err));
-  }
+    .catch((err) => console.log(err));
+}
+
+// Click handlers
+function onClick() {
+    $("#submitBtn").on("click", handleSubmit);
+}
