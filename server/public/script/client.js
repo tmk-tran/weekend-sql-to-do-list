@@ -7,6 +7,8 @@ $(() => {
 
 // Click handlers
 function onClick() {
+  $( '#viewList' ).on( "click", ".completeButton", updateList);
+
   $("#addBtn").on( 'click', function(){
     let task = $("#taskIn").val();
     let description = $("#descriptionIn").val();
@@ -59,13 +61,14 @@ function appendList(list) {
       item.priority = "N/A";
     }
 
+    if (item.complete === null || item.complete === undefined) {
+      item.status = "N/A";
+    }
+
     if (item.notes === null || item.notes === undefined) {
       item.notes = "N/A";
     }
 
-    if (item.status === null || item.status === undefined) {
-      item.status = "N/A";
-    }
     // For each item, append a new row
     $("#viewList").append(`
       <tr>
@@ -73,8 +76,8 @@ function appendList(list) {
         <td>${item.description}</td>
         <td>${item.priority}</td>
         <td>${item.notes}</td>
-        <td>${item.status}</td>
-        <td><button class="readyButton" data-id=${item.id}  data-ready=${item.ready} >${item.ready ? "Incomplete": "Complete"}</button></td>
+        <td>${item.complete}</td>
+        <td><button class="completeButton" data-id=${item.id}  data-ready=${item.complete} >${item.complete ? "Incomplete": "Complete"}</button></td>
         <td><button class="deleteButton" data-id=${item.id}>Delete</button></td>
       </tr>
     `);

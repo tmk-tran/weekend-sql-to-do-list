@@ -63,10 +63,10 @@ router.put("/:id", (req, res) => {
     const item = req.body;
     console.log(item);
     console.log('UPDATE list in /list with id: ', id);
-    queryText = `UPDATE "list" SET "status" = $1 WHERE "id" = $2;`;
+    queryText = `UPDATE "list" SET "complete" = $1 WHERE "id" = $2;`;
   
     pool
-      .query(queryText, [item.status, id])
+      .query(queryText, [item.complete, id])
       .then(() => res.sendStatus(204))
       .catch((err) => {
         console.log("error in PUT", err);
