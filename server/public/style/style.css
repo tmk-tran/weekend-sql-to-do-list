@@ -6,3 +6,57 @@ h1 {
     text-align: center;
 }
 
+h3 {
+    text-align: center;
+}
+
+/* ~~~~~~~~~~Table Style ~~~~~~~~~~ */
+.task-row {
+    background-color: aqua; /* default color */
+}
+
+.complete-task {
+    color: ghostwhite;
+    background-color: green;
+}
+
+/* ~~~~~~~~~~Input Field ~~~~~~~~~~ */
+.input-field{
+    display: flex;
+    flex-direction: column;
+    width:50%;
+    gap: 10px;
+    margin: 0 auto;
+    border: 2px solid black;
+}
+
+.input {
+    width: 50%;
+    margin: 0 auto;
+    height: 50px;
+    text-align: center;
+}
+
+#priorityIn {
+    width: 50px;
+    height: 40px;
+    font-size: 16px;
+    margin: 0 auto;
+}
+
+#addBtn {
+    background-color:darkorange;
+    width: 50%;
+    margin: 0 auto;
+    height: 50px;
+    font-family: monospace;
+}
+
+#addBtn:hover {
+    background-color:teal;
+    color:whitesmoke;
+}
+
+.label {
+    text-align: center;
+}

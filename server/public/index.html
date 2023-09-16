@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="./style/style.css">
     <title>To-Do List</title>
 </head>
-
 <body>
     <header>
         <h1>TO-DO List</h1>
@@ -19,17 +18,17 @@
     <br />
     <br />
     <br />
-    <section>
+    <section class="input-field">
         <h3>Change me later:</h3>
-        <label>Task:</label><input type="text" class="input" id="taskIn" placeholder="Task" size="10">
-        <label>Description:</label><input type="text" class="input" id="descriptionIn" placeholder="Description" size="10">
-        <label>Priority:</label><select id="priorityIn">
+        <label class="label"></label><input type="text" class="input" id="taskIn" placeholder="Enter to-do item" size="10">
+        <label class="label"></label><input type="text" class="input" id="descriptionIn" placeholder="Short Description of Task" size="10">
+        <label class="label">Priority:</label><select id="priorityIn">
             <option value="H">H</option>
             <option value="M">M</option>
             <option value="L">L</option>
         </select>
-        <label>Notes:</label><input type="text" class="input" id="notesIn" placeholder="Notes" size="20">
-        <button type="button" id="addBtn">Add</button>
+        <label class="label">Notes:</label><input type="text" class="input" id="notesIn" placeholder="Optional" size="20">
+        <button type="button" id="addBtn">Add To List</button>
         <hr />
     </section>
     <br />
