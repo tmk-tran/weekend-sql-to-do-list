@@ -1,23 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
     <script src="./script/client.js"></script>
     <link rel="stylesheet" href="./style/style.css">
     <title>To-Do List</title>
 </head>
+
 <body>
-    <header><h1>TO-DO List</h1></header>
+    <header>
+        <h1>TO-DO List</h1>
+    </header>
     <section>
-        <h3>Add New Book</h3>
-        <label>Title:</label><input type="text" name="" value="" id="title" size="10">
-        <label>Author:</label><input type="text" name="" value="" id="author" size="10">
+        <h3>Change me later:</h3>
+        <label>Task:</label><input type="text" name="" value="" id="title" size="10">
+        <label>Description:</label><input type="text" name="" value="" id="author" size="10">
+        <label>Due:</label><input type="text" name="" value="" id="author" size="10">
+        <label>Priority:</label><select id="priority">
+            <option value="H">H</option>
+            <option value="M">M</option>
+            <option value="L">L</option>
+        </select>
+        <label>Notes:</label><input type="text" name="" value="" id="author" size="20">
         <button type="button" id="submitBtn">Submit</button>
         <hr />
-      </section>
+    </section>
 
-    
+
 </body>
+
 </html>
