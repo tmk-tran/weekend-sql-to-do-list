@@ -13,7 +13,6 @@ function onClick() {
   $("#addBtn").on( 'click', function(){
     let task = $("#taskIn").val();
     let description = $("#descriptionIn").val();
-    let due = $("#dueIn").val();
     let priority = $("#priorityIn").val();
     let notes = $("#notesIn").val();
 
@@ -22,7 +21,6 @@ function onClick() {
     let itemSend = {
       task: task,
       description: description,
-      due: due,
       priority: priority,
       notes: notes,
     };
@@ -34,7 +32,6 @@ function onClick() {
 
     $("#taskIn").val('');
     $("#descriptionIn").val('');
-    $("#dueIn").val('');
     $("#priorityIn").val('');
     $("#notesIn").val('');
     // call saveTask with the new obejct
@@ -86,14 +83,14 @@ function getList() {
 }
 
 //ajax POST
-function saveTask( newTask ){
-  console.log( 'in saveTask', newTask );
+function saveTask(itemSend){
+  console.log('in saveTask', itemSend);
 
   // ajax call to server to post task
  $.ajax({
   method: "POST",
   url: "/list",
-  data: newTask,
+  data: itemSend,
  }).then(() => getList())
  .catch((err) => console.log(err));
 };
