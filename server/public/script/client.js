@@ -44,3 +44,19 @@ function appendList(list) {
     `);
   }
 };
+
+// ajax PUT
+function updateList(event){
+  const id = $(event.target).data("id");
+  const complete = $(event.target).data("complete");
+  console.log(id, complete);
+
+  $.ajax({
+    method: "PUT",
+    url: `/list/${id}`,
+    data: {complete: !complete},
+  })
+  .then(() => getList())
+  .catch((err) => {console.log("Error with PUT ajax", err)
+})
+}
