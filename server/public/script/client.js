@@ -8,6 +8,7 @@ $(() => {
 // Click handlers
 function onClick() {
   $( '#viewList' ).on( "click", ".completeButton", updateList);
+  $( '#viewList' ).on( "click", ".deleteButton", deleteTask);
 
   $("#addBtn").on( 'click', function(){
     let task = $("#taskIn").val();
@@ -118,3 +119,11 @@ function updateList(event){
 })
 }
 
+const deleteTask = (event) => {
+  console.log('in deleteTask');
+  const id = $(event.target).data("id");
+  $.ajax({
+    method: "DELETE",
+    url: `/list/${id}`,
+  }).then(() => getList()).catch((err) => console.log(err));
+};

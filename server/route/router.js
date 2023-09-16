@@ -37,26 +37,6 @@ if (!list.task || !list.priority) {
     });
 });
 
-// DELETE 
-router.delete("/:id", (req, res) => {
-    const id = req.params.id;
-    console.log("DELETE requests at /list/ with id of", id);
-    const queryText = `DELETE FROM "list" WHERE "id" = $1;`;
-  
-    if (!id) {
-      res.sendStatus(400);
-      return;
-    }
-  
-    pool
-      .query(queryText, [id])
-      .then(() => res.sendStatus(204))
-      .catch((err) => {
-        console.log("error in DELETing item from list table", err);
-        res.sendStatus(500);
-      });
-});
-
 // PUT
 router.put("/:id", (req, res) => {
     const id = req.params.id;
@@ -73,5 +53,25 @@ router.put("/:id", (req, res) => {
         res.sendStatus(500);
       });
   });
+
+// DELETE 
+router.delete("/:id", (req, res) => {
+  const id = req.params.id;
+  console.log("DELETE requests at /list/ with id of", id);
+  const queryText = `DELETE FROM "list" WHERE "id" = $1;`;
+
+  if (!id) {
+    res.sendStatus(400);
+    return;
+  }
+
+  pool
+    .query(queryText, [id])
+    .then(() => res.sendStatus(204))
+    .catch((err) => {
+      console.log("error in DELETing item from list table", err);
+      res.sendStatus(500);
+    });
+});
 
 module.exports = router;
