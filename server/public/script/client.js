@@ -58,11 +58,11 @@ function appendList(list) {
     // For each item, append a new row
     $("#viewList").append(`
       <tr>
+        <td><button class="completeButton" data-id=${item.id}  data-ready=${item.complete} >${item.complete ? "Complete": "Incomplete"}</button></td>
         <td>${item.task}</td>
         <td>${item.description}</td>
         <td>${item.priority}</td>
         <td>${item.notes}</td>
-        <td><button class="completeButton" data-id=${item.id}  data-ready=${item.complete} >${item.complete ? "Incomplete": "Complete"}</button></td>
         <td><button class="deleteButton" data-id=${item.id}>Delete</button></td>
       </tr>
     `);
