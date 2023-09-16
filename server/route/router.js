@@ -20,8 +20,8 @@ router.get("/", (req, res) => {
 router.post("/", (req, res) => {
   const list = req.body;
   console.log("POST request at /list/ with data of", list);
-  const queryText = `INSERT INTO "list" ("task", "priority")
-                            VALUES ($1, $2)`;
+  const queryText = `INSERT INTO "list" ("task", "description", "priority", "notes")
+                            VALUES ($1, $2, $3, $4)`;
 
 if (!list.task || !list.priority) {
     res.sendStatus(400);
@@ -29,7 +29,7 @@ if (!list.task || !list.priority) {
 }
 
   pool
-    .query(queryText, [list.task, list.priority])
+    .query(queryText, [list.task, list.description, list.priority, list.notes])
     .then(() => res.sendStatus(201))
     .catch((err) => {
       console.log("error in POST request", err);
