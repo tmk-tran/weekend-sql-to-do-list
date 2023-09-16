@@ -49,20 +49,8 @@ function appendList(list) {
     let item = list[i];
 
     // Check if any of the fields are null or undefined
-    if (item.task === null || item.task === undefined) {
-      item.task = "N/A";
-    }
-
-    if (item.description === null || item.description === undefined) {
+    if (item.description === null || item.description === undefined) { // can rewrite to item.description = item.description || 'N/A';
       item.description = "N/A";
-    }
-
-    if (item.priority === null || item.priority === undefined) {
-      item.priority = "N/A";
-    }
-
-    if (item.complete === null || item.complete === undefined) {
-      item.status = "N/A";
     }
 
     if (item.notes === null || item.notes === undefined) {
@@ -76,7 +64,6 @@ function appendList(list) {
         <td>${item.description}</td>
         <td>${item.priority}</td>
         <td>${item.notes}</td>
-        <td>${item.complete}</td>
         <td><button class="completeButton" data-id=${item.id}  data-ready=${item.complete} >${item.complete ? "Incomplete": "Complete"}</button></td>
         <td><button class="deleteButton" data-id=${item.id}>Delete</button></td>
       </tr>
@@ -113,7 +100,7 @@ function saveTask( newTask ){
 // ajax PUT
 function updateList(event){
   const id = $(event.target).data("id");
-  const complete = $(event.target).data("complete");
+  const complete = $(event.target).data("ready");
   console.log(id, complete);
 
   $.ajax({
@@ -121,7 +108,12 @@ function updateList(event){
     url: `/list/${id}`,
     data: {complete: !complete},
   })
-  .then(() => getList())
+  .then(() => {
+    console.log("PUT request successful");
+    // Toggle the button text
+    $(event.target).data("ready", !complete); // Update the "data-ready" attribute
+    $(event.target).text(!complete ? "Complete" : "Incomplete"); // Update the button text
+  })
   .catch((err) => {console.log("Error with PUT ajax", err)
 })
 }
