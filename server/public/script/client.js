@@ -2,25 +2,20 @@ $(() => {
   console.log("JQ and JS ready!");
 
   refreshList();
-  //   onClick();
+  onClick();
 });
-
-// GET list data
-function refreshList() {
-  console.log("in refresh");
-  $.ajax({
-    type: "GET",
-    url: "/list",
-  })
-    .then((response) => {
-      appendList(response);
-    })
-    .catch((err) => console.log(err));
-}
 
 // Click handlers
 function onClick() {
-    $("#submitBtn").on("click", handleSubmit);
+  $("#addBtn").on( 'click', function(){
+    // let itemTask = $("#taskIn").val();
+    // let itemDescription = $("#descriptionIn").val();
+    // let itemDue = $("#dueIn").val();
+    // let itemPriority = $("#priorityIn").val();
+    // let itemNotes = $("#notesIn").val();
+
+    console.log( 'clicked add button' );
+  })
 }
 
 function appendList(list) {
@@ -45,6 +40,32 @@ function appendList(list) {
   }
 };
 
+// GET list data
+function refreshList() {
+  console.log("in refresh");
+  $.ajax({
+    type: "GET",
+    url: "/list",
+  })
+    .then((response) => {
+      appendList(response);
+    })
+    .catch((err) => console.log(err));
+}
+
+//ajax POST
+function saveTask( newTask ){
+  console.log( 'in saveTask', newTask );
+
+  // ajax call to server to post task
+ $.ajax({
+  method: "POST",
+  url: "/list",
+  data: newTask,
+ }).then(() => getList())
+ .catch((err) => console.log(err));
+};
+
 // ajax PUT
 function updateList(event){
   const id = $(event.target).data("id");
@@ -60,3 +81,4 @@ function updateList(event){
   .catch((err) => {console.log("Error with PUT ajax", err)
 })
 }
+
