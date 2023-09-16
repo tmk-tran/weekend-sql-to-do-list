@@ -106,12 +106,7 @@ function updateList(event){
     url: `/list/${id}`,
     data: {complete: !complete},
   })
-  .then(() => {
-    console.log("PUT request successful");
-    // Toggle the button text
-    $(event.target).data("ready", !complete); // Update the "data-ready" attribute
-    $(event.target).text(!complete ? "Complete" : "Incomplete"); // Update the button text
-  })
+  .then(() => getList())
   .catch((err) => {console.log("Error with PUT ajax", err)
 })
 }
