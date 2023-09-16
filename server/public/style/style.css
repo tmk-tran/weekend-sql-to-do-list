@@ -1,9 +1,10 @@
 body {
-    background-color: burlywood;
+    background-color:slategrey;
 }
 
 h1 {
     text-align: center;
+    font-family: Bradley Hand;
 }
 
 h3 {
@@ -20,7 +21,7 @@ h3 {
     background-color: green;
 }
 
-/* ~~~~~~~~~~Input Field ~~~~~~~~~~ */
+/* ~~~~~~~~~~ Input Field ~~~~~~~~~~ */
 .input-field{
     display: flex;
     flex-direction: column;
@@ -35,14 +36,17 @@ h3 {
     margin: 0 auto;
     height: 50px;
     text-align: center;
+    border-radius: 5px;
+    border: 1px solid black;
 }
 
 #priorityIn {
-    width: 50px;
-    height: 40px;
-    font-size: 16px;
     margin: 0 auto;
+    font-size:24px;
+    width: 75px;
 }
+
+
 
 #addBtn {
     background-color:darkorange;
@@ -60,3 +64,6 @@ h3 {
 .label {
     text-align: center;
 }
+
+/* ~~~~~~~~~~ Table Data ~~~~~~~~~~ */
+
