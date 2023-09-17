@@ -21,7 +21,7 @@ function onClick() {
 
   $("#confirmDeleteButton").on("click", function (event) {
     const id = $(event.target).data("id"); // get the ID of the item to be deleted
-
+    console.log("clicked delete button");
     // Perform the delete usig ajax
     $.ajax({
       method: "DELETE",
@@ -155,13 +155,13 @@ function updateList(event) {
 }
 
 // Original DELETE function, unneeded after modal added
-// const deleteTask = (event) => {
-//   console.log("in deleteTask");
-//   const id = $(event.target).data("id");
-//   $.ajax({
-//     method: "DELETE",
-//     url: `/list/${id}`,
-//   })
-//     .then(() => getList())
-//     .catch((err) => console.log(err));
-// };
+const deleteTask = (event) => {
+  console.log("in deleteTask");
+  const id = $(event.target).data("id");
+  $.ajax({
+    method: "DELETE",
+    url: `/list/${id}`,
+  })
+    .then(() => getList())
+    .catch((err) => console.log(err));
+};
