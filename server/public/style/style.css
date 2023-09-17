@@ -1,0 +1,244 @@
+body {
+  background-color: slategrey;
+  background-image: url(https://wallpapercave.com/wp/wp8411095.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed; /* prevent from scrolling */
+}
+
+h1 {
+  text-align: center;
+  font-family: AppleMyungjo;
+  background-color: antiquewhite;
+  padding: 10px;
+}
+
+/* ~~~~~~~~~~ List Container ~~~~~~~~~~ */
+.list-container {
+  display: flex;
+  flex-direction: row;
+  margin-right: 20%;
+  min-width: 200px;
+}
+
+@media (max-width: 768px) {
+  .list-container {
+    width: 50%;
+  }
+}
+
+/* ~~~~~~~~~~ Input Fields ~~~~~~~~~~ */
+.input-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin: 0 auto;
+  padding: 15px;
+  min-width: 200px;
+  width: 30%;
+  /* border: 2px solid black; */
+}
+
+.form-control {
+  width: 70%;
+  height: calc(1.5em + .75rem + 15px);
+  text-align: center;
+  margin: 0 auto;
+  border-radius: 15px;
+  border: 1px solid black;
+}
+
+#descriptionIn {
+  height: 6em;
+  border-radius: 15px;
+}
+
+#notesIn {
+  height: 10em;
+  border-radius: 15px;
+}
+
+/* ~~~~~~~~~~Table Style ~~~~~~~~~~ */
+.table td {
+  padding: 0.75rem;
+  vertical-align: top;
+  border-top: 1px solid #dee2e6;
+  text-align: center;
+  font-size: 18px;
+  font-family: Rockwell;
+  /* font-weight: bold; */
+}
+
+tr:nth-child(even) {
+  background-color:azure;
+}
+
+th {
+  font-family: monospace;
+  font-size: 18px;
+  padding: 15px;
+  background-color: black;
+  color: whitesmoke;
+  text-align: center;
+}
+
+.list-row {
+  background-color: ivory;
+  border-bottom: 2px solid blanchedalmond;
+}
+
+/* ~~~~~~~~~~ Table Container ~~~~~~~~~~ */
+.list {
+  /* border: 2px solid black; */
+  padding: 20px;
+  min-width: 200px;
+  margin: 5px auto;
+  width: 60.5em;
+}
+
+/* ~~~~~~~~~~ Select menu ~~~~~~~~~~ */
+#priorityIn {
+  margin: 0 auto;
+  font-size: 20px;
+  min-width: 8em;
+  width: 9em;
+  height: 2em;
+  border: 1px solid black;
+  /* box-shadow: 0 0px 10px rgba(0, 0, 0, 19.1); */
+  font-family: Comic Sans MS;
+  color: seashell;
+  background-color: black;
+}
+
+#priorityIn:hover {
+  background-color: royalblue;
+}
+
+/* ~~~~~~~~~~ Buttons ~~~~~~~~~~ */
+/* #addBtn {
+  background-color: darkorange;
+  width: 50%;
+  margin: 0 auto;
+  height: 50px;
+  font-family: monospace;
+  border-radius: 25px;
+  border: 1px solid black;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 25.1); /* box shadow */
+/*} */
+/* Had this first^^, then styled w/ bootstrap */
+
+button.btn-primary {
+  background-color: darkorange;
+  width: 50%;
+  margin: 0 auto;
+  height: 50px;
+  font-family: monospace;
+  border-radius: 25px;
+  border: 1px solid black;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 25.1); /* box shadow */
+}
+
+#addBtn:hover {
+  background-color: springgreen;
+  color: black;
+}
+
+.label {
+  text-align: center;
+}
+
+#deleteBtn {
+  /* border: 1px solid black;
+  background-color: powderblue;
+  border-radius: 50%; */
+  height: 20px;
+  width: 20px;
+}
+
+/* ~~~~~~~~~~ Targets trash can icon in button ~~~~~~~~~~ */
+button.deleteButton i {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+}
+
+button.deleteButton i:hover {
+  color: orangered;
+}
+
+/* ~~~~~~~~~~ Style for the complete/incomplete buttons ~~~~~~~~~~ */
+.completed-task {
+  background-color: springgreen;
+}
+
+.completed-task #completeBtn {
+  color: white;
+  background-color: forestgreen;
+  border-radius: 5px;
+  border: 2px ridge #000; /* 2 pixel wide groove (3D) black border */
+}
+
+.incomplete-task {
+  background-color: #d9534f;
+}
+
+.incomplete-task #completeBtn {
+  color: white;
+  background-color: crimson;
+  border-radius: 5px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 25.1);
+}
+
+.task-complete {
+  text-decoration: line-through;
+}
+
+/* ~~~~~~~~~~ Styles for the Delete Confirmation Modal ~~~~~~~~~~ */
+.modal-content {
+  border: 2px solid black;
+  border-radius: 10px;
+  /* padding: 2px; */
+}
+
+.modal-header {
+  background-color: lightcoral;
+  color: ghostwhite;
+  border-bottom: none;
+  border-top-right-radius: 8px;
+  border-top-left-radius: 8px;
+}
+
+.close {
+  font-weight: bold;
+  color: whitesmoke;
+  transition: transform 0.2s;
+}
+
+.close:hover {
+  color: black;
+  transform: scale(1.5);
+}
+
+.modal-title {
+  margin-bottom: 0;
+  line-height: 1.5;
+  font-family: Myanmar MN;
+}
+
+.modal-body {
+  text-align: center;
+}
+
+.modal-footer {
+  border-top: none;
+}
+
+#confirmDeleteButton {
+  background-color: #d9534f;
+  color: #fff;
+}
+
+#confirmDeleteButton:hover {
+  background-color: #c9302c;
+}

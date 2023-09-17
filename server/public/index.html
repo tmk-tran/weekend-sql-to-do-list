@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="./script/client.js"></script>
+    <link rel="stylesheet" href="./style/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <title>To-Do List</title>
+</head>
+
+<body>
+    <header>
+        <h1>TO-DO List</h1>
+    </header>
+    <div class="list-container">
+        <section class="input-field">
+            <label class="label"></label><input type="text" class="form-control" id="taskIn" placeholder="Item To-Do">
+            <label class="label"></label><input type="text" class="form-control" id="descriptionIn" placeholder="Short Description of Task">
+            <label class="label"></label><select class="form-select text-center" aria-label="priority" id="priorityIn">
+                <option value="" disabled selected>Select Priority:</option>
+                <option value="H">H</option>
+                <option value="M">M</option>
+                <option value="L">L</option>
+            </select>
+            <label class="label"></label><input type="text" class="form-control" id="notesIn" placeholder="Notes" size="20">
+            <button class="button btn-primary" id="addBtn">Add To List</button>
+        </section>
+        <br />
+        <section class="list">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Task</th>
+                        <th>Description</th>
+                        <th>Priority</th>
+                        <th>Notes</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                    <tbody id="viewList">
+                    </tbody>
+            </table>
+        </section>
+    </div>
+    <div class="modal fade" id="deleteConfirmationModal" tabindex="-1" role="dialog"
+        aria-labelledby="deleteConfirmationModalTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="deleteConfirmationModalTitle">Confirm Deletion</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Are you sure you want to delete this item?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-danger" id="confirmDeleteButton">Delete</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</body>
+
+</html>
