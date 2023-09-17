@@ -30,7 +30,7 @@ h3 {
     text-align: center;
 }
 
-/* ~~~~~~~~~~ Input Field ~~~~~~~~~~ */
+/* ~~~~~~~~~~ Input Fields ~~~~~~~~~~ */
 .input-field {
     display: flex;
     flex-direction: column;
@@ -51,12 +51,14 @@ h3 {
     font-size: 14px;
 }
 
+/* ~~~~~~~~~~ Select menu ~~~~~~~~~~ */
 #priorityIn {
     margin: 0 auto;
     font-size:24px;
     width: 75px;
 }
 
+/* ~~~~~~~~~~ Buttons ~~~~~~~~~~ */
 #addBtn {
     background-color:darkorange;
     width: 50%;
@@ -79,6 +81,7 @@ h3 {
     text-align: center;
 }
 
+/* ~~~~~~~~~~ L and R side of page ~~~~~~~~~~ */
 .list-container {
     display: flex;
     flex-direction: row;
