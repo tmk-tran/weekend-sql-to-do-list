@@ -96,6 +96,21 @@ th {
   text-align: center;
 }
 
+#deleteBtn {
+  background-color: blue;
+}
+
+/* ~~~~~~~~~~ Style for the complete/incomplete buttons ~~~~~~~~~~ */
+.completed-task #completeBtn {
+  color: white;
+  background-color: forestgreen;
+}
+
+.incomplete-task #completeBtn {
+  color: white;
+  background-color: crimson;
+}
+
 /* ~~~~~~~~~~ L and R side of page ~~~~~~~~~~ */
 .list-container {
   display: flex;
@@ -110,7 +125,7 @@ th {
 }
 
 .modal-header {
-  background-color: maroon;
+  background-color: lightcoral;
   color: ghostwhite;
   border-bottom: none;
   border-top-right-radius: 8px;
@@ -149,17 +164,4 @@ th {
 
 #confirmDeleteButton:hover {
   background-color: #c9302c;
-}
-
-
-/* ~~~~~~~~~~ Style for the complete/incomplete buttons ~~~~~~~~~~ */
-.completed-task {
-  color: green;
-  background-color: lightgreen;
-}
-
-
-.incomplete-task {
-  color: red;
-  background-color: pink;
 }

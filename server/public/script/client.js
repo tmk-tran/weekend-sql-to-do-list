@@ -91,13 +91,13 @@ function appendList(list) {
     // For each item, append a new row. Added class="task-row" to target w CSS later
     $("#viewList").append(`
       <tr class="list-row">
-      <td class="${completedClass}"><button class="completeButton" data-id=${item.id}  data-ready=${item.complete}>
+      <td class="${completedClass}"><button class="completeButton" id="completeBtn" data-id=${item.id}  data-ready=${item.complete}>
       ${item.complete ? "Complete" : "Incomplete"}</button></td>
         <td>${item.task}</td>
         <td>${item.description}</td>
         <td>${item.priority}</td>
         <td>${item.notes}</td>
-        <td><button class="deleteButton" data-toggle="modal" data-target="#deleteConfirmationModal" data-id=${
+        <td><button class="deleteButton" id="deleteBtn" data-toggle="modal" data-target="#deleteConfirmationModal" data-id=${
           item.id
         }>Delete</button>
         </td>
