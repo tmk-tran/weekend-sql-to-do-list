@@ -50,6 +50,7 @@ function onClick() {
       description: description,
       priority: priority,
       notes: notes,
+      complete: false, // initializing to false (task incomplete)
     };
     // validation
     if (!task || !priority) {
@@ -84,14 +85,17 @@ function appendList(list) {
       item.notes = "N/A";
     }
 
+    // Define CSS classes for completed and incomplete tasks
+    const completedClass = item.complete ? "completed-task" : "incomplete-task"; // add 'completedClass' to <td> line with ${item.description}
+
     // For each item, append a new row. Added class="task-row" to target w CSS later
     $("#viewList").append(`
-      <tr class="task-row">
+      <tr class="list-row">
         <td><button class="completeButton" data-id=${item.id}  data-ready=${
       item.complete
     } >${item.complete ? "Complete" : "Incomplete"}</button></td>
         <td>${item.task}</td>
-        <td>${item.description}</td>
+        <td class="${completedClass}">${item.description}</td>
         <td>${item.priority}</td>
         <td>${item.notes}</td>
         <td><button class="deleteButton" data-toggle="modal" data-target="#deleteConfirmationModal" data-id=${

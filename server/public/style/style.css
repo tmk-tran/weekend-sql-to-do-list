@@ -9,25 +9,45 @@ h1 {
 
 }
 
-h3 {
+h2, h3 {
     text-align: center;
 }
 
 /* ~~~~~~~~~~Table Style ~~~~~~~~~~ */
-.task-row {
-    background-color:lavender; /* default color */
-    
+.table td {
+    padding: .75rem;
+    vertical-align: top;
+    border-top: 1px solid #dee2e6;
+    text-align: center;
+    font-size: 16px;
+    font-family: Papyrus;
+    font-weight: bold;
 }
 
-/* .complete-task {
-    color: ghostwhite;
-    background-color: green;
-} */
+tr {
+    border: 2px solid black;
+}
+
+tr:nth-child(even) {
+    background-color: lightgrey;
+}
+
+th {
+    font-family: monospace;
+    font-size: 18px;
+    padding: 15px;
+    background-color:black;
+    color:whitesmoke;
+}
+
+.list-row {
+    background-color:lavender; /* default color */    
+}
 
 /* ~~~~~~~~~~ Table Data ~~~~~~~~~~ */
 .list {
     border: 2px solid black;
-    text-align: center;
+    padding: 20px;
 }
 
 /* ~~~~~~~~~~ Input Fields ~~~~~~~~~~ */
@@ -74,7 +94,6 @@ h3 {
 #addBtn:hover {
     background-color:springgreen;
     color:black;
-
 }
 
 .label {
@@ -86,4 +105,45 @@ h3 {
     display: flex;
     flex-direction: row;
     
+}
+
+/* ~~~~~~~~~~ Styles for the Delete Confirmation Modal ~~~~~~~~~~ */
+.modal-content {
+    border: 2px solid black;
+    border-radius: 10px;
+    /* padding: 2px; */
+}
+
+.modal-header {
+    background-color: maroon;
+    color: ghostwhite;
+    border-bottom: none;
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
+}
+
+.close {
+    font-weight: bold;
+    color: whitesmoke;
+    transition: transform .2s;
+}
+
+.close:hover {
+    color: black;
+    transform: scale(1.5);
+    
+}
+
+.modal-title {
+    margin-bottom: 0;
+    line-height: 1.5;
+    font-family: Myanmar MN;
+}
+
+.modal-body {
+    text-align: center;
+}
+
+.modal-footer {
+    border-top: none;
 }
