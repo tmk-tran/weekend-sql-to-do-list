@@ -63,7 +63,8 @@ function appendList(list) {
         <td>${item.description}</td>
         <td>${item.priority}</td>
         <td>${item.notes}</td>
-        <td><button class="deleteButton" data-toggle="modal" data-target="#deleteConfirmationModal" data-id=${item.id}>Delete</button></td>
+        <td><button class="deleteButton" data-toggle="modal" data-target="#deleteConfirmationModal" data-id=${item.id}>Delete</button>
+        </td>
       </tr>
     `);
   }
