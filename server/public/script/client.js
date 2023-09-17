@@ -103,7 +103,7 @@ function appendList(list) {
           </button>
         </td>
       </tr>
-    `); // addded ^^ trash can icon from Font Awesome
+    `); // added class 'small-button'  ^^^ to target w CSS 
   }
 }
 
