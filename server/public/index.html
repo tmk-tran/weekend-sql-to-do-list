@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="./style/style.css">
     <title>To-Do List</title>
 </head>
+
 <body>
     <header>
         <h1>TO-DO List</h1>
@@ -17,37 +18,42 @@
     <br />
     <br />
     <br />
-    <br />
-    <section class="input-field">
-        <h3>Make a list by entering the values below:</h3>
-        <label class="label"></label><input type="text" class="input" id="taskIn" placeholder="Item To-Do" size="10">
-        <label class="label"></label><input type="text" class="input" id="descriptionIn" placeholder="Short Description of Task" size="10">
-        <label class="label">Priority:</label><select class="select" id="priorityIn">
-            <option value="H">H</option>
-            <option value="M">M</option>
-            <option value="L">L</option>
-        </select>
-        <label class="label">Notes:</label><input type="text" class="input" id="notesIn" placeholder="Optional" size="20">
-        <button type="button" id="addBtn">Add To List</button>
-        <hr />
-    </section>
-    <br />
-    <br />
-    <section>
-        <h2>Change Me:</h2>
-        <table>
-          <thead>
-            <tr>
-              <th>Task</th>
-              <th>Description</th>
-              <th>Priority</th>
-              <th>Notes</th>
-            </tr>
-          </thead>
-          <tbody id="viewList">
-          </tbody>
-        </table>
-      </section>
+    <div class="list-container">
+        <section class="input-field">
+            <h3>Come up with something to put here:</h3>
+            <label class="label"></label><input type="text" class="input" id="taskIn" placeholder="Item To-Do"
+                size="10">
+            <label class="label"></label><input type="text" class="input" id="descriptionIn"
+                placeholder="Short Description of Task" size="10">
+            <label class="label">Priority:</label><select class="select" id="priorityIn">
+                <option value="H">H</option>
+                <option value="M">M</option>
+                <option value="L">L</option>
+            </select>
+            <label class="label">Notes:</label><input type="text" class="input" id="notesIn" placeholder="Optional"
+                size="20">
+            <button type="button" id="addBtn">Add To List</button>
+            <br />
+            <br />
+        </section>
+        <br />
+        <br />
+        <section class="list">
+            <h2>Change Me:</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Task</th>
+                        <th>Description</th>
+                        <th>Priority</th>
+                        <th>Notes</th>
+                    </tr>
+                </thead>
+                    <tbody id="viewList">
+                    </tbody>
+            </table>
+        </section>
+    </div>
 </body>
 
 </html>

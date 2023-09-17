@@ -5,6 +5,8 @@ body {
 h1 {
     text-align: center;
     font-family: Bradley Hand;
+    background-color: antiquewhite;
+
 }
 
 h3 {
@@ -13,22 +15,31 @@ h3 {
 
 /* ~~~~~~~~~~Table Style ~~~~~~~~~~ */
 .task-row {
-    background-color: aqua; /* default color */
+    background-color:lavender; /* default color */
+    
 }
 
-.complete-task {
+/* .complete-task {
     color: ghostwhite;
     background-color: green;
+} */
+
+/* ~~~~~~~~~~ Table Data ~~~~~~~~~~ */
+.list {
+    width: 50%;
+    border: 2px solid black;
+    text-align: center;
 }
 
 /* ~~~~~~~~~~ Input Field ~~~~~~~~~~ */
-.input-field{
+.input-field {
     display: flex;
     flex-direction: column;
-    width:50%;
+    width: 50%;
     gap: 10px;
-    margin: 0 auto;
+    /* margin: 0 auto; */
     border: 2px solid black;
+    /* padding: 15px; */
 }
 
 .input {
@@ -38,6 +49,7 @@ h3 {
     text-align: center;
     border-radius: 5px;
     border: 1px solid black;
+    font-size: 14px;
 }
 
 #priorityIn {
@@ -46,24 +58,29 @@ h3 {
     width: 75px;
 }
 
-
-
 #addBtn {
     background-color:darkorange;
     width: 50%;
     margin: 0 auto;
     height: 50px;
     font-family: monospace;
+    border-radius: 25px;
+    border: 1px solid black;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 25.1); /* Add a box shadow */
+
 }
 
 #addBtn:hover {
-    background-color:teal;
-    color:whitesmoke;
+    background-color:springgreen;
+    color:black;
+
 }
 
 .label {
     text-align: center;
 }
 
-/* ~~~~~~~~~~ Table Data ~~~~~~~~~~ */
-
+.list-container {
+    display: flex;
+    flex-direction: row;
+}

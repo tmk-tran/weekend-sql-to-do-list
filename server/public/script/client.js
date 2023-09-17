@@ -32,7 +32,7 @@ function onClick() {
 
     $("#taskIn").val('');
     $("#descriptionIn").val('');
-    $("#priorityIn").val('');
+    $("#priorityIn").val(); // set this to empty so it resets, with a letter
     $("#notesIn").val('');
     // call saveTask with the new obejct
     saveTask(itemSend);
