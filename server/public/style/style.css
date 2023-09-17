@@ -116,18 +116,41 @@ th {
 }
 
 #deleteBtn {
-  background-color: blue;
+  border: 1px solid black;
+  background-color: honeydew;
+  border-radius: 50%;
+  height: 20px;
+  width: 20px;
+}
+
+button.small-button {
+    font-size: 10px;
+    font-weight: bold;
+    font-family: Apple Symbols;
+    color: black;
 }
 
 /* ~~~~~~~~~~ Style for the complete/incomplete buttons ~~~~~~~~~~ */
+.completed-task {
+  background-color: springgreen;
+}
+
 .completed-task #completeBtn {
   color: white;
   background-color: forestgreen;
+  border-radius: 5px;
+  border: 2px ridge #000; /* 2 pixel wide groove (3D) black border */
+}
+
+.incomplete-task {
+  background-color: #d9534f;
 }
 
 .incomplete-task #completeBtn {
   color: white;
   background-color: crimson;
+  border-radius: 5px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 25.1);
 }
 
 /* ~~~~~~~~~~ Styles for the Delete Confirmation Modal ~~~~~~~~~~ */

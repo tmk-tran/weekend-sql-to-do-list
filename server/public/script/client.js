@@ -97,12 +97,11 @@ function appendList(list) {
         <td>${item.description}</td>
         <td>${item.priority}</td>
         <td>${item.notes}</td>
-        <td><button class="deleteButton" id="deleteBtn" data-toggle="modal" data-target="#deleteConfirmationModal" data-id=${
-          item.id
-        }>Delete</button>
+        <td><button class="deleteButton small-button" id="deleteBtn" data-toggle="modal" data-target="#deleteConfirmationModal" data-id=${
+          item.id}>X</button>
         </td>
       </tr>
-    `);
+    `); // added class 'small-button'  ^^^ to target w CSS 
   }
 }
 
