@@ -1,5 +1,9 @@
 body {
   background-color: slategrey;
+  background-image: url(https://wallpapercave.com/wp/wp8411095.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed; /* prevent from scrolling */
 }
 
 h1 {
