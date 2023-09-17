@@ -22,22 +22,19 @@
     </header>
     <div class="list-container">
         <section class="input-field">
-            <label class="label"></label><input type="text" class="input" id="taskIn" placeholder="Item To-Do"
-                size="10">
-            <label class="label"></label><input type="text" class="input" id="descriptionIn"
-                placeholder="Short Description of Task" size="10">
-            <label class="label">Priority:</label><select class="select" id="priorityIn">
+            <label class="label"></label><input type="text" class="form-control" id="taskIn" placeholder="Item To-Do">
+            <label class="label"></label><input type="text" class="form-control" id="descriptionIn" placeholder="Short Description of Task">
+            <label class="label"></label><select class="form-select text-center" aria-label="priority" id="priorityIn">
+                <option value="" disabled selected>Select Priority:</option>
                 <option value="H">H</option>
                 <option value="M">M</option>
                 <option value="L">L</option>
             </select>
-            <label class="label">Notes:</label><input type="text" class="input" id="notesIn" placeholder="Optional"
-                size="20">
-            <button type="button" id="addBtn">Add To List</button>
+            <label class="label"></label><input type="text" class="form-control" id="notesIn" placeholder="Notes" size="20">
+            <button class="button btn-primary" id="addBtn">Add To List</button>
         </section>
         <br />
         <section class="list">
-            <h2>Change Me:</h2>
             <table class="table">
                 <thead>
                     <tr>

@@ -87,16 +87,19 @@ function appendList(list) {
 
     // Define CSS classes for completed and incomplete tasks
     const completedClass = item.complete ? "completed-task" : "incomplete-task"; // add 'completedClass' to <td> line with ${item.description}
+    // Define another variable for strikethrough effect
+    const taskComplete = item.complete ? "task-complete" : "task-incomplete";
 
     // For each item, append a new row. Added class="task-row" to target w CSS later
     $("#viewList").append(`
       <tr class="list-row">
-      <td class="${completedClass}"><button class="completeButton" id="completeBtn" data-id=${item.id}  data-ready=${item.complete}>
-      ${item.complete ? "Complete" : "Incomplete"}</button></td>
-        <td>${item.task}</td>
-        <td>${item.description}</td>
-        <td>${item.priority}</td>
-        <td>${item.notes}</td>
+      <td class="${completedClass}">
+        <button class="completeButton" id="completeBtn" data-id=${item.id}  data-ready=${item.complete}>
+          ${item.complete ? "Complete" : "Incomplete"}</button></td>
+        <td class="${taskComplete}">${item.task}</td>
+        <td class="${taskComplete}">${item.description}</td>
+        <td class="${taskComplete}">${item.priority}</td>
+        <td class="${taskComplete}">${item.notes}</td>
         <td>
           <button class="deleteButton" id="deleteBtn" data-toggle="modal" data-target="#deleteConfirmationModal" data-id=${item.id}>
             <i class="fas fa-trash"></i>

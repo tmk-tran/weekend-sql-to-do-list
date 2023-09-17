@@ -8,43 +8,54 @@ body {
 
 h1 {
   text-align: center;
-  font-family: Bradley Hand;
+  font-family: AppleMyungjo;
   background-color: antiquewhite;
   padding: 10px;
-}
-
-h2 {
-  text-align: center;
 }
 
 /* ~~~~~~~~~~ List Container ~~~~~~~~~~ */
 .list-container {
   display: flex;
-  flex-direction: column;
-  margin-right: 30%;
+  flex-direction: row;
+  margin-right: 20%;
+  min-width: 200px;
+}
+
+@media (max-width: 768px) {
+  .list-container {
+    width: 50%;
+  }
 }
 
 /* ~~~~~~~~~~ Input Fields ~~~~~~~~~~ */
 .input-field {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 6px;
   margin: 0 auto;
-  border: 2px solid black;
   padding: 15px;
   min-width: 200px;
-  width: 759px;
+  width: 30%;
+  /* border: 2px solid black; */
 }
 
-.input {
-  width: 50%;
-  margin: 0 auto;
-  height: 50px;
+.form-control {
+  width: 70%;
+  height: calc(1.5em + .75rem + 15px);
   text-align: center;
-  border-radius: 5px;
+  margin: 0 auto;
+  border-radius: 15px;
   border: 1px solid black;
-  box-shadow: 0 0px 10px rgba(0, 0, 0, 20.1);
-  font-size: 14px;
+}
+
+#descriptionIn {
+  height: 6em;
+  border-radius: 15px;
+}
+
+#notesIn {
+  height: 10em;
+  border-radius: 15px;
 }
 
 /* ~~~~~~~~~~Table Style ~~~~~~~~~~ */
@@ -53,13 +64,13 @@ h2 {
   vertical-align: top;
   border-top: 1px solid #dee2e6;
   text-align: center;
-  font-size: 16px;
-  font-family: Papyrus;
-  font-weight: bold;
+  font-size: 18px;
+  font-family: Rockwell;
+  /* font-weight: bold; */
 }
 
 tr:nth-child(even) {
-  background-color: lightgrey;
+  background-color:azure;
 }
 
 th {
@@ -68,35 +79,55 @@ th {
   padding: 15px;
   background-color: black;
   color: whitesmoke;
+  text-align: center;
 }
 
 .list-row {
-  background-color: lavender;
-  border-bottom: 2px solid black;
+  background-color: ivory;
+  border-bottom: 2px solid blanchedalmond;
 }
 
 /* ~~~~~~~~~~ Table Container ~~~~~~~~~~ */
 .list {
-  border: 2px solid black;
+  /* border: 2px solid black; */
   padding: 20px;
   min-width: 200px;
   margin: 5px auto;
+  width: 60.5em;
 }
 
 /* ~~~~~~~~~~ Select menu ~~~~~~~~~~ */
 #priorityIn {
   margin: 0 auto;
-  font-size: 24px;
-  width: 60px;
+  font-size: 20px;
+  min-width: 8em;
+  width: 9em;
+  height: 2em;
   border: 1px solid black;
   /* box-shadow: 0 0px 10px rgba(0, 0, 0, 19.1); */
   font-family: Comic Sans MS;
   color: seashell;
-  background-color: darkblue;
+  background-color: black;
+}
+
+#priorityIn:hover {
+  background-color: royalblue;
 }
 
 /* ~~~~~~~~~~ Buttons ~~~~~~~~~~ */
-#addBtn {
+/* #addBtn {
+  background-color: darkorange;
+  width: 50%;
+  margin: 0 auto;
+  height: 50px;
+  font-family: monospace;
+  border-radius: 25px;
+  border: 1px solid black;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 25.1); /* box shadow */
+/*} */
+/* Had this first^^, then styled w/ bootstrap */
+
+button.btn-primary {
   background-color: darkorange;
   width: 50%;
   margin: 0 auto;
@@ -117,11 +148,11 @@ th {
 }
 
 #deleteBtn {
-  border: 1px solid black;
+  /* border: 1px solid black;
   background-color: powderblue;
-  border-radius: 50%;
-  height: 25px;
-  width: 25px;
+  border-radius: 50%; */
+  height: 20px;
+  width: 20px;
 }
 
 /* ~~~~~~~~~~ Targets trash can icon in button ~~~~~~~~~~ */
@@ -157,6 +188,10 @@ button.deleteButton i:hover {
   background-color: crimson;
   border-radius: 5px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 25.1);
+}
+
+.task-complete {
+  text-decoration: line-through;
 }
 
 /* ~~~~~~~~~~ Styles for the Delete Confirmation Modal ~~~~~~~~~~ */
