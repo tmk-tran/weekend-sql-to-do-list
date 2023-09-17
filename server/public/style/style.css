@@ -1,149 +1,165 @@
 body {
-    background-color:slategrey;
+  background-color: slategrey;
 }
 
 h1 {
-    text-align: center;
-    font-family: Bradley Hand;
-    background-color: antiquewhite;
-
+  text-align: center;
+  font-family: Bradley Hand;
+  background-color: antiquewhite;
 }
 
-h2, h3 {
-    text-align: center;
+h2,
+h3 {
+  text-align: center;
 }
 
 /* ~~~~~~~~~~Table Style ~~~~~~~~~~ */
 .table td {
-    padding: .75rem;
-    vertical-align: top;
-    border-top: 1px solid #dee2e6;
-    text-align: center;
-    font-size: 16px;
-    font-family: Papyrus;
-    font-weight: bold;
-}
-
-tr {
-    border: 2px solid black;
+  padding: 0.75rem;
+  vertical-align: top;
+  border-top: 1px solid #dee2e6;
+  text-align: center;
+  font-size: 16px;
+  font-family: Papyrus;
+  font-weight: bold;
 }
 
 tr:nth-child(even) {
-    background-color: lightgrey;
+  background-color: lightgrey;
 }
 
 th {
-    font-family: monospace;
-    font-size: 18px;
-    padding: 15px;
-    background-color:black;
-    color:whitesmoke;
+  font-family: monospace;
+  font-size: 18px;
+  padding: 15px;
+  background-color: black;
+  color: whitesmoke;
 }
 
 .list-row {
-    background-color:lavender; /* default color */    
+  background-color: lavender; /* default color */
+  border-bottom: 2px solid black;
 }
 
-/* ~~~~~~~~~~ Table Data ~~~~~~~~~~ */
+/* ~~~~~~~~~~ Table Container ~~~~~~~~~~ */
 .list {
-    border: 2px solid black;
-    padding: 20px;
+  border: 2px solid black;
+  padding: 20px;
 }
 
 /* ~~~~~~~~~~ Input Fields ~~~~~~~~~~ */
 .input-field {
-    display: flex;
-    flex-direction: column;
-    width: 50%;
-    gap: 10px;
-    /* margin: 0 auto; */
-    border: 2px solid black;
-    /* padding: 15px; */
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  gap: 10px;
+  /* margin: 0 auto; */
+  border: 2px solid black;
+  /* padding: 15px; */
 }
 
 .input {
-    width: 50%;
-    margin: 0 auto;
-    height: 50px;
-    text-align: center;
-    border-radius: 5px;
-    border: 1px solid black;
-    font-size: 14px;
+  width: 50%;
+  margin: 0 auto;
+  height: 50px;
+  text-align: center;
+  border-radius: 5px;
+  border: 1px solid black;
+  font-size: 14px;
 }
 
 /* ~~~~~~~~~~ Select menu ~~~~~~~~~~ */
 #priorityIn {
-    margin: 0 auto;
-    font-size:24px;
-    width: 75px;
+  margin: 0 auto;
+  font-size: 24px;
+  width: 75px;
 }
 
 /* ~~~~~~~~~~ Buttons ~~~~~~~~~~ */
 #addBtn {
-    background-color:darkorange;
-    width: 50%;
-    margin: 0 auto;
-    height: 50px;
-    font-family: monospace;
-    border-radius: 25px;
-    border: 1px solid black;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 25.1); /* Add a box shadow */
-
+  background-color: darkorange;
+  width: 50%;
+  margin: 0 auto;
+  height: 50px;
+  font-family: monospace;
+  border-radius: 25px;
+  border: 1px solid black;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 25.1); /* Add a box shadow */
 }
 
 #addBtn:hover {
-    background-color:springgreen;
-    color:black;
+  background-color: springgreen;
+  color: black;
 }
 
 .label {
-    text-align: center;
+  text-align: center;
 }
 
 /* ~~~~~~~~~~ L and R side of page ~~~~~~~~~~ */
 .list-container {
-    display: flex;
-    flex-direction: row;
-    
+  display: flex;
+  flex-direction: row;
 }
 
 /* ~~~~~~~~~~ Styles for the Delete Confirmation Modal ~~~~~~~~~~ */
 .modal-content {
-    border: 2px solid black;
-    border-radius: 10px;
-    /* padding: 2px; */
+  border: 2px solid black;
+  border-radius: 10px;
+  /* padding: 2px; */
 }
 
 .modal-header {
-    background-color: maroon;
-    color: ghostwhite;
-    border-bottom: none;
-    border-top-right-radius: 8px;
-    border-top-left-radius: 8px;
+  background-color: maroon;
+  color: ghostwhite;
+  border-bottom: none;
+  border-top-right-radius: 8px;
+  border-top-left-radius: 8px;
 }
 
 .close {
-    font-weight: bold;
-    color: whitesmoke;
-    transition: transform .2s;
+  font-weight: bold;
+  color: whitesmoke;
+  transition: transform 0.2s;
 }
 
 .close:hover {
-    color: black;
-    transform: scale(1.5);
-    
+  color: black;
+  transform: scale(1.5);
 }
 
 .modal-title {
-    margin-bottom: 0;
-    line-height: 1.5;
-    font-family: Myanmar MN;
+  margin-bottom: 0;
+  line-height: 1.5;
+  font-family: Myanmar MN;
 }
 
 .modal-body {
-    text-align: center;
+  text-align: center;
 }
 
 .modal-footer {
-    border-top: none;
+  border-top: none;
+}
+
+#confirmDeleteButton {
+  background-color: #d9534f;
+  color: #fff;
+}
+
+#confirmDeleteButton:hover {
+  background-color: #c9302c;
+}
+
+
+/* ~~~~~~~~~~ Style for the complete/incomplete buttons ~~~~~~~~~~ */
+.completed-task {
+  color: green;
+  background-color: lightgreen;
+}
+
+
+.incomplete-task {
+  color: red;
+  background-color: pink;
 }
