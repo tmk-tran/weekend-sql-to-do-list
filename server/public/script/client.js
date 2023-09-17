@@ -8,9 +8,10 @@ $(() => {
 // Click handlers
 function onClick() {
   $("#viewList").on("click", ".completeButton", updateList);
-  // $( '#viewList' ).on( "click", ".deleteButton", deleteTask); // Originally had, modified for delete modal
-  $("#viewList").on("click", ".deleteButton", function (event) {
+  // $( '#viewList' ).on( "click", ".deleteButton", deleteTask); // Originally had this, modified for delete modal
+  $("#viewList").on("click", ".deleteButton", function (event) { // Passed trash icon in here as well, was having trouble with click event
     const id = $(event.target).data("id");
+    console.log("clicked delete button!", id);
 
     // Store the ID of the item to be deleted
     $("#confirmDeleteButton").data("id", id);
@@ -21,7 +22,7 @@ function onClick() {
 
   $("#confirmDeleteButton").on("click", function (event) {
     const id = $(event.target).data("id"); // get the ID of the item to be deleted
-    console.log("clicked delete button");
+    console.log("clicked delete button", id);
     // Perform the delete usig ajax
     $.ajax({
       method: "DELETE",
@@ -100,15 +101,16 @@ function appendList(list) {
         <td class="${taskComplete}">${item.description}</td>
         <td class="${taskComplete}">${item.priority}</td>
         <td class="${taskComplete}">${item.notes}</td>
-        <td>
-          <button class="deleteButton" id="deleteBtn" data-toggle="modal" data-target="#deleteConfirmationModal" data-id=${item.id}>
-            <i class="fas fa-trash"></i>
-          </button>
+        <td><button class="deleteButton" data-toggle="modal" data-target="#deleteConfirmationModal" data-id=${
+          item.id
+        }></button>
         </td>
       </tr>
     `); // added class 'small-button'  ^^^ to target w CSS 
   }
 }
+
+
 
 // GET list data
 function getList() {
