@@ -6,11 +6,40 @@ h1 {
   text-align: center;
   font-family: Bradley Hand;
   background-color: antiquewhite;
+  padding: 10px;
 }
 
-h2,
-h3 {
+h2 {
   text-align: center;
+}
+
+/* ~~~~~~~~~~ L and R side of page ~~~~~~~~~~ */
+.list-container {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ~~~~~~~~~~ Input Fields ~~~~~~~~~~ */
+.input-field {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 0 auto;
+  border: 2px solid black;
+  padding: 15px;
+  min-width: 200px;
+  width: 759px;
+}
+
+.input {
+  width: 50%;
+  margin: 0 auto;
+  height: 50px;
+  text-align: center;
+  border-radius: 5px;
+  border: 1px solid black;
+  box-shadow: 0 0px 10px rgba(0, 0, 0, 20.1);
+  font-size: 14px;
 }
 
 /* ~~~~~~~~~~Table Style ~~~~~~~~~~ */
@@ -45,34 +74,20 @@ th {
 .list {
   border: 2px solid black;
   padding: 20px;
-}
-
-/* ~~~~~~~~~~ Input Fields ~~~~~~~~~~ */
-.input-field {
-  display: flex;
-  flex-direction: column;
-  width: 50%;
-  gap: 10px;
-  /* margin: 0 auto; */
-  border: 2px solid black;
-  /* padding: 15px; */
-}
-
-.input {
-  width: 50%;
-  margin: 0 auto;
-  height: 50px;
-  text-align: center;
-  border-radius: 5px;
-  border: 1px solid black;
-  font-size: 14px;
+  min-width: 200px;
+  margin: 5px auto;
 }
 
 /* ~~~~~~~~~~ Select menu ~~~~~~~~~~ */
 #priorityIn {
   margin: 0 auto;
   font-size: 24px;
-  width: 75px;
+  width: 60px;
+  border: 1px solid black;
+  /* box-shadow: 0 0px 10px rgba(0, 0, 0, 19.1); */
+  font-family: Comic Sans MS;
+  color: seashell;
+  background-color: darkblue;
 }
 
 /* ~~~~~~~~~~ Buttons ~~~~~~~~~~ */
@@ -109,12 +124,6 @@ th {
 .incomplete-task #completeBtn {
   color: white;
   background-color: crimson;
-}
-
-/* ~~~~~~~~~~ L and R side of page ~~~~~~~~~~ */
-.list-container {
-  display: flex;
-  flex-direction: row;
 }
 
 /* ~~~~~~~~~~ Styles for the Delete Confirmation Modal ~~~~~~~~~~ */
