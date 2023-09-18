@@ -55,6 +55,12 @@ function onClick() {
       });
   });
 
+  $("#reverseBtn").on("click", function () {
+    console.log("clicked reverse button!");
+
+    
+  });
+
   $("#addBtn").on("click", function () {
     let task = $("#taskIn").val();
     let description = $("#descriptionIn").val();
