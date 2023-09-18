@@ -9,15 +9,32 @@ $(() => {
 function onClick() {
   $("#viewList").on("click", ".completeButton", updateList);
   // $( '#viewList' ).on( "click", ".deleteButton", deleteTask); // Originally had this, modified for delete modal
-  $("#viewList").on("click", ".deleteButton", function (event) { // Passed trash icon in here as well, was having trouble with click event
-    const id = $(event.target).data("id");
-    console.log("clicked delete button!", id);
+  $("#viewList").on("click", ".deleteButton", function (event) {
+    // was having trouble with click event here
+    const id = $(event.delegateTarget).data("id");
+    console.log("clicked delete button, or icon!", id);
 
     // Store the ID of the item to be deleted
     $("#confirmDeleteButton").data("id", id);
 
     // Open the modal
     $("#deleteConfirmationModal").modal("show");
+  });
+
+  // Handle the click event for the trash icon within the button
+  $("#viewList").on("click", ".deleteButton i", function (event) {
+    const buttonTrash = event.target.closest(".deleteButton"); // target closest element
+
+    if (buttonTrash) {
+      const id = $(buttonTrash).data("id");
+      console.log("clicked trash icon!", id);
+
+      // Store the ID of the item to be deleted
+      $("#confirmDeleteButton").data("id", id);
+
+      // Open the modal
+      $("#deleteConfirmationModal").modal("show");
+    }
   });
 
   $("#confirmDeleteButton").on("click", function (event) {
@@ -68,7 +85,7 @@ function onClick() {
   });
 }
 
-// Append function 
+// Append function
 function appendList(list) {
   console.log("in appendList");
 
@@ -95,7 +112,9 @@ function appendList(list) {
     $("#viewList").append(`
       <tr class="list-row">
       <td class="${completedClass}">
-        <button class="completeButton" id="completeBtn" data-id=${item.id}  data-ready=${item.complete}>
+        <button class="completeButton" id="completeBtn" data-id=${
+          item.id
+        }  data-ready=${item.complete}>
           ${item.complete ? "Complete" : "Incomplete"}</button></td>
         <td class="${taskComplete}">${item.task}</td>
         <td class="${taskComplete}">${item.description}</td>
@@ -106,11 +125,9 @@ function appendList(list) {
         }><i class="fas fa-trash"></i></button>
         </td>
       </tr>
-    `); // added class 'small-button'  ^^^ to target w CSS 
+    `); // added icon ^ 'trash' on button
   }
 }
-
-
 
 // GET list data
 function getList() {
