@@ -8,7 +8,7 @@ $(() => {
 // Click handlers
 function onClick() {
   $("#viewList").on("click", ".completeButton", updateList);
-  // $( '#viewList' ).on( "click", ".deleteButton", deleteTask); // Originally had this, modified for delete modal
+  // $( '#viewList' ).on( "click", ".deleteButton", deleteTask); // <-- Originally had this, modified for delete modal
   $("#viewList").on("click", ".deleteButton", function (event) {
     // was having trouble with click event here
     const id = $(event.delegateTarget).data("id");
