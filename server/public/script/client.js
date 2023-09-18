@@ -8,9 +8,11 @@ $(() => {
 // Click handlers
 function onClick() {
   $("#viewList").on("click", ".completeButton", updateList);
-  // $( '#viewList' ).on( "click", ".deleteButton", deleteTask); // Originally had, modified for delete modal
+  // $( '#viewList' ).on( "click", ".deleteButton", deleteTask); // Originally had this, modified for delete modal
   $("#viewList").on("click", ".deleteButton", function (event) {
-    const id = $(event.target).data("id");
+    // was having trouble with click event here
+    const id = $(event.delegateTarget).data("id");
+    console.log("clicked delete button, or icon!", id);
 
     // Store the ID of the item to be deleted
     $("#confirmDeleteButton").data("id", id);
@@ -19,9 +21,25 @@ function onClick() {
     $("#deleteConfirmationModal").modal("show");
   });
 
+  // Handle the click event for the trash icon within the button
+  $("#viewList").on("click", ".deleteButton i", function (event) {
+    const buttonTrash = event.target.closest(".deleteButton"); // target closest element
+
+    if (buttonTrash) {
+      const id = $(buttonTrash).data("id");
+      console.log("clicked trash icon!", id);
+
+      // Store the ID of the item to be deleted
+      $("#confirmDeleteButton").data("id", id);
+
+      // Open the modal
+      $("#deleteConfirmationModal").modal("show");
+    }
+  });
+
   $("#confirmDeleteButton").on("click", function (event) {
     const id = $(event.target).data("id"); // get the ID of the item to be deleted
-
+    console.log("clicked delete button", id);
     // Perform the delete usig ajax
     $.ajax({
       method: "DELETE",
@@ -67,7 +85,7 @@ function onClick() {
   });
 }
 
-// Append function 
+// Append function
 function appendList(list) {
   console.log("in appendList");
 
@@ -94,19 +112,20 @@ function appendList(list) {
     $("#viewList").append(`
       <tr class="list-row">
       <td class="${completedClass}">
-        <button class="completeButton" id="completeBtn" data-id=${item.id}  data-ready=${item.complete}>
+        <button class="completeButton" id="completeBtn" data-id=${
+          item.id
+        }  data-ready=${item.complete}>
           ${item.complete ? "Complete" : "Incomplete"}</button></td>
         <td class="${taskComplete}">${item.task}</td>
         <td class="${taskComplete}">${item.description}</td>
         <td class="${taskComplete}">${item.priority}</td>
         <td class="${taskComplete}">${item.notes}</td>
-        <td>
-          <button class="deleteButton" id="deleteBtn" data-toggle="modal" data-target="#deleteConfirmationModal" data-id=${item.id}>
-            <i class="fas fa-trash"></i>
-          </button>
+        <td><button class="deleteButton" data-toggle="modal" data-target="#deleteConfirmationModal" data-id=${
+          item.id
+        }><i class="fas fa-trash"></i></button>
         </td>
       </tr>
-    `); // added class 'small-button'  ^^^ to target w CSS 
+    `); // added icon ^ 'trash' on button
   }
 }
 
@@ -155,13 +174,13 @@ function updateList(event) {
 }
 
 // Original DELETE function, unneeded after modal added
-// const deleteTask = (event) => {
-//   console.log("in deleteTask");
-//   const id = $(event.target).data("id");
-//   $.ajax({
-//     method: "DELETE",
-//     url: `/list/${id}`,
-//   })
-//     .then(() => getList())
-//     .catch((err) => console.log(err));
-// };
+const deleteTask = (event) => {
+  console.log("in deleteTask");
+  const id = $(event.target).data("id");
+  $.ajax({
+    method: "DELETE",
+    url: `/list/${id}`,
+  })
+    .then(() => getList())
+    .catch((err) => console.log(err));
+};
