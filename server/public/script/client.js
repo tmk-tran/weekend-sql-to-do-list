@@ -183,6 +183,16 @@ function updateList(event) {
   const complete = $(event.target).data("ready");
   console.log(id, complete);
 
+  // check if the task being marked is complete
+  const updateData = {
+    complete:!complete,
+  };
+  
+  if (updateData.complete) {
+    // set the completed_date property to the current date
+    updateData.completed_date = new Date().toLocaleDateString();
+  }
+
   $.ajax({
     method: "PUT",
     url: `/list/${id}`,
