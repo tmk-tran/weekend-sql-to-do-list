@@ -58,8 +58,8 @@ For each of your strech goals, you will be practicing git branching. Please refe
 
 - `feature-ordering-task-query` 
 
-    - [ ]  Research [Query Params](https://expressjs.com/en/api.html#req.query) to have the request reverse the order of the returned todos. 
+    - [x]  Research [Query Params](https://expressjs.com/en/api.html#req.query) to have the request reverse the order of the returned todos. 
     
 - `feature-time-completed` 
 
-    - [ ]  Add the ability to record when a task was completed. Show the completed date on the frontend in a pretty format.
+    - [x]  Add the ability to record when a task was completed. Show the completed date on the frontend in a pretty format.
