@@ -154,6 +154,18 @@ button.btn-primary {
   font-family: Comic Sans MS;
 }
 
+#reverseBtn:hover {
+  background-color:lavender;
+  color: black
+}
+
+button {
+  border-radius: 5px;
+  background-color: beige;
+  /* border: 1px solid black; */
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 10.1);
+}
+
 /* ~~~~~~~~~~ Targets trash can icon in button ~~~~~~~~~~ */
 button.deleteButton i {
   display: flex;

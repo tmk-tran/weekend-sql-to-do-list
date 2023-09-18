@@ -124,7 +124,9 @@ function appendList(list) {
     // Define another variable for strikethrough effect
     const taskComplete = item.complete ? "task-complete" : "task-incomplete";
 
-    // For each item, append a new row. Added class="task-row" to target w CSS later
+    const completedDate = item.completed_date ? new Date(item.completed_date).toLocaleDateString() : ""; // --> Format the timestamp to mm/dd/yyyy
+
+    // For each item, append a new row
     $("#viewList").append(`
       <tr class="list-row">
       <td class="${completedClass}">
@@ -136,6 +138,7 @@ function appendList(list) {
         <td class="${taskComplete}">${item.description}</td>
         <td class="${taskComplete}">${item.priority}</td>
         <td class="${taskComplete}">${item.notes}</td>
+        <td class="${taskComplete}">${completedDate}</td>
         <td><button class="deleteButton" data-toggle="modal" data-target="#deleteConfirmationModal" data-id=${
           item.id
         }><i class="fas fa-trash"></i></button>

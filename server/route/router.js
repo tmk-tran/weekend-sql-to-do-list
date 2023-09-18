@@ -56,16 +56,18 @@ if (!list.task || !list.priority) {
     });
 });
 
-// PUT
+// PUT -updated for stretch goal
 router.put("/:id", (req, res) => {
     const id = req.params.id;
     const item = req.body;
     console.log(item);
     console.log('UPDATE list in /list with id: ', id);
-    queryText = `UPDATE "list" SET "complete" = $1 WHERE "id" = $2;`;
-  
+    const completedDate = item.complete ? new Date() : null; // Add completed date if complete
+
+    const queryText = `UPDATE "list" SET "complete" = $1, "completed_date" = $2 WHERE "id" = $3;`;
+
     pool
-      .query(queryText, [item.complete, id])
+      .query(queryText, [item.complete, completedDate, id])
       .then(() => res.sendStatus(204))
       .catch((err) => {
         console.log("error in PUT", err);
