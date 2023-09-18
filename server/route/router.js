@@ -2,10 +2,30 @@ const express = require("express");
 const router = express.Router();
 const pool = require("../modules/pool");
 
-// GET
+// Original GET request, modified for reverse params below
+// router.get("/", (req, res) => {
+//   console.log("Received GET request at /list");
+//   const queryText = `SELECT * FROM "list" ORDER BY "id" ASC;`;
+
+//   pool
+//     .query(queryText)
+//     .then((result) => res.send(result.rows))
+//     .catch(() => {
+//       console.log("error in GET request");
+//       res.sendStatus(500);
+//     });
+// });
+
+// Updated GET for reverse params
 router.get("/", (req, res) => {
   console.log("Received GET request at /list");
-  const queryText = `SELECT * FROM "list" ORDER BY "id" ASC;`;
+
+  // Check if reverse query param is present
+  const reverseOrder = req.query.reverse === "true";
+  // Define the sorting order
+  const sortOrder = reverseOrder? "DESC" : "ASC";
+
+  const queryText = `SELECT * FROM "list" ORDER BY "id" ${sortOrder};`;
 
   pool
     .query(queryText)
