@@ -21,11 +21,10 @@ router.get("/", (req, res) => {
   console.log("Received GET request at /list");
 
   // Check if reverse query param is present
-  const reverseOrder = req.query.reverse === "true";
-  // Define the sorting order
-  const sortOrder = reverseOrder? "DESC" : "ASC";
+  const reverseOrder = req.query.reverse === "true" ? "DESC" : "ASC";
+  console.log(reverseOrder);
 
-  const queryText = `SELECT * FROM "list" ORDER BY "id" ${sortOrder};`;
+  const queryText = `SELECT * FROM "list" ORDER BY "id" ${reverseOrder};`;
 
   pool
     .query(queryText)

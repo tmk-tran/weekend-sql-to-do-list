@@ -55,23 +55,20 @@ function onClick() {
       });
   });
 
-  $("#reverseBtn").on("click", function () {
-    console.log("clicked reverse button!");
+  $("#reverseBtn").on("click", function () { // --> Added for stretch goal
+    console.log("clicked isReverse button!");
 
-    // Get the current URL
-    const currentUrl = window.location.href;
+    // Construct the URL with the updated flag as a query parameter
+    const url = new URL(window.location.href);
+    // CHeck the current state of the query parameter
+    const currentState = url.searchParams.get("reverse");
+    // If it's true, set it to false, and vice versa
+    const newState = currentState === "true" ? "false" : "true";
+    // Update the query parameter w the new state
+    url.searchParams.set("reverse", newState);
 
-    // Parse the URL to check if it has a reverse query
-    const url = newURL(currentUrl);
-    const reverseParam = url.searchParams.get("reverse");
-
-    // Toggling the reverse parameter query
-    if (reverseParam === "true") {
-      url.searchParams.delete('reverse');
-    } else {
-      url.searchParams.set('reverse', 'true');
-    }
-    // Redirect to the updated URL w/ the query parameters
+    // Reload the page with the updated flag as the query parameter
+    window.location.href = url.toString();
   });
 
   $("#addBtn").on("click", function () {
@@ -151,9 +148,14 @@ function appendList(list) {
 // GET list data
 function getList() {
   console.log("in getList");
+
+  // Check if the 'reverse' parameter is set to true
+  const reverseParam = new URL(window.location.href).searchParams.get("reverse");
+  const isReverse = reverseParam === "true";
+
   $.ajax({
     type: "GET",
-    url: "/list",
+    url: `/list?reverse=${isReverse}`, // include the reverse parameter in url
   })
     .then((response) => {
       appendList(response);
@@ -193,13 +195,13 @@ function updateList(event) {
 }
 
 // Original DELETE function, unneeded after modal added
-const deleteTask = (event) => {
-  console.log("in deleteTask");
-  const id = $(event.target).data("id");
-  $.ajax({
-    method: "DELETE",
-    url: `/list/${id}`,
-  })
-    .then(() => getList())
-    .catch((err) => console.log(err));
-};
+// const deleteTask = (event) => {
+//   console.log("in deleteTask");
+//   const id = $(event.target).data("id");
+//   $.ajax({
+//     method: "DELETE",
+//     url: `/list/${id}`,
+//   })
+//     .then(() => getList())
+//     .catch((err) => console.log(err));
+// };
