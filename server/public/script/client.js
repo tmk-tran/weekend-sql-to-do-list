@@ -58,7 +58,20 @@ function onClick() {
   $("#reverseBtn").on("click", function () {
     console.log("clicked reverse button!");
 
-    
+    // Get the current URL
+    const currentUrl = window.location.href;
+
+    // Parse the URL to check if it has a reverse query
+    const url = newURL(currentUrl);
+    const reverseParam = url.searchParams.get("reverse");
+
+    // Toggling the reverse parameter query
+    if (reverseParam === "true") {
+      url.searchParams.delete('reverse');
+    } else {
+      url.searchParams.set('reverse', 'true');
+    }
+    // Redirect to the updated URL w/ the query parameters
   });
 
   $("#addBtn").on("click", function () {

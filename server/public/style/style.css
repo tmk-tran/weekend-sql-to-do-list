@@ -147,12 +147,11 @@ button.btn-primary {
   text-align: center;
 }
 
-#deleteBtn {
-  /* border: 1px solid black;
-  background-color: powderblue;
-  border-radius: 50%; */
-  height: 20px;
-  width: 20px;
+#reverseBtn {
+  border-radius: 5px;
+  background-color: indigo;
+  color:ghostwhite;
+  font-family: Comic Sans MS;
 }
 
 /* ~~~~~~~~~~ Targets trash can icon in button ~~~~~~~~~~ */
@@ -177,6 +176,7 @@ button.deleteButton i:hover {
   background-color: forestgreen;
   border-radius: 5px;
   border: 2px ridge #000; /* 2 pixel wide groove (3D) black border */
+  font-family: Comic Sans MS;
 }
 
 .incomplete-task {
