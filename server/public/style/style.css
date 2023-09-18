@@ -66,7 +66,6 @@ h1 {
   text-align: center;
   font-size: 18px;
   font-family: Rockwell;
-  /* font-weight: bold; */
 }
 
 tr:nth-child(even) {
@@ -100,14 +99,12 @@ th {
 #priorityIn {
   margin: 0 auto;
   font-size: 20px;
-  min-width: 8em;
-  width: 9em;
+  min-width: 200px;
   height: 2em;
   border: 1px solid black;
-  /* box-shadow: 0 0px 10px rgba(0, 0, 0, 19.1); */
   font-family: Comic Sans MS;
   color: seashell;
-  background-color: black;
+  background-color: teal;
 }
 
 #priorityIn:hover {
