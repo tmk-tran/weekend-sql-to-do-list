@@ -55,6 +55,22 @@ function onClick() {
       });
   });
 
+  $("#reverseBtn").on("click", function () { // --> Added for stretch goal
+    console.log("clicked isReverse button!");
+
+    // Construct the URL with the updated flag as a query parameter
+    const url = new URL(window.location.href);
+    // CHeck the current state of the query parameter
+    const currentState = url.searchParams.get("reverse");
+    // If it's true, set it to false, and vice versa
+    const newState = currentState === "true" ? "false" : "true";
+    // Update the query parameter w the new state
+    url.searchParams.set("reverse", newState);
+
+    // Reload the page with the updated flag as the query parameter
+    window.location.href = url.toString();
+  });
+
   $("#addBtn").on("click", function () {
     let task = $("#taskIn").val();
     let description = $("#descriptionIn").val();
@@ -132,9 +148,14 @@ function appendList(list) {
 // GET list data
 function getList() {
   console.log("in getList");
+
+  // Check if the 'reverse' parameter is set to true
+  const reverseParam = new URL(window.location.href).searchParams.get("reverse");
+  const isReverse = reverseParam === "true";
+
   $.ajax({
     type: "GET",
-    url: "/list",
+    url: `/list?reverse=${isReverse}`, // include the reverse parameter in url
   })
     .then((response) => {
       appendList(response);
@@ -174,13 +195,13 @@ function updateList(event) {
 }
 
 // Original DELETE function, unneeded after modal added
-const deleteTask = (event) => {
-  console.log("in deleteTask");
-  const id = $(event.target).data("id");
-  $.ajax({
-    method: "DELETE",
-    url: `/list/${id}`,
-  })
-    .then(() => getList())
-    .catch((err) => console.log(err));
-};
+// const deleteTask = (event) => {
+//   console.log("in deleteTask");
+//   const id = $(event.target).data("id");
+//   $.ajax({
+//     method: "DELETE",
+//     url: `/list/${id}`,
+//   })
+//     .then(() => getList())
+//     .catch((err) => console.log(err));
+// };
