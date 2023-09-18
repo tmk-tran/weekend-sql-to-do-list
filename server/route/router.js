@@ -56,14 +56,22 @@ if (!list.task || !list.priority) {
     });
 });
 
-// PUT
+// PUT -updated for stretch goal
 router.put("/:id", (req, res) => {
     const id = req.params.id;
     const item = req.body;
     console.log(item);
     console.log('UPDATE list in /list with id: ', id);
     queryText = `UPDATE "list" SET "complete" = $1 WHERE "id" = $2;`;
-  
+
+    // added loop to check if item is complete
+    if (item.complete) {
+      // set the completed date to the current timestamp
+      item.completed_date = new Date();
+    } else {
+      item.completed_date = null;
+    }
+
     pool
       .query(queryText, [item.complete, id])
       .then(() => res.sendStatus(204))
