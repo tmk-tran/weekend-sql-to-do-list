@@ -1,4 +1,6 @@
-## The To-Do App
+## Project Name
+
+"To-Do App" by T Mark Schisel
 
 This weekend challenge required the creation of a 'TO DO' application
 
