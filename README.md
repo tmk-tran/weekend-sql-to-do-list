@@ -16,7 +16,7 @@ This weekend challenge required the creation of a 'TO DO' application
 
 ## Screen Shot
 
-Refer to img.png for a visual representation of the application.
+Refer to ![Alt text](img.png) for a visual representation of the application.
 
 ## Prerequisites
 
