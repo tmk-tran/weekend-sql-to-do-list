@@ -17,8 +17,13 @@ This weekend challenge required the creation of a 'TO DO' application
 - Deleting a Task should remove it both from the front end as well as the Database.
 
 ## Screen Shot
+![Alt text](image.png)
 
-Refer to ![Alt text](img.png) for a visual representation of the application.
+### Set Priority Level
+![Alt text](image-1.png)
+
+### Alert on Item Delete
+![Alt text](image-2.png)
 
 ## Prerequisites
 
