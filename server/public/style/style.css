@@ -126,11 +126,11 @@ th {
 
 button.btn-primary {
   background-color: darkorange;
-  width: 50%;
+  width: 70%;
   margin: 0 auto;
   height: 50px;
   font-family: monospace;
-  border-radius: 25px;
+  border-radius: 15px;
   border: 1px solid black;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 25.1); /* box shadow */
 }
